@@ -13,6 +13,11 @@ use IotSpace\Support\HttpMethod;
  */
 class DeviceClient extends BaseClient
 {
+    public function __construct(array $config)
+    {
+        parent::__construct($config);
+    }
+
     /**
      * 获取设备详情
      * https://developer.tuya.com/cn/docs/cloud/device-management?id=K9g6rfntdz78a#title-1-%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E8%AF%A6%E6%83%85

@@ -10,3 +10,9 @@ function getMicroTime()
     $mSecTime = (float)sprintf('%.0f', (floatval($mSec) + floatval($sec)) * 1000);
     return $mSecTime;
 }
+
+function app($abstract)
+{
+    return new $abstract();
+
+}

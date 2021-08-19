@@ -45,7 +45,10 @@ class YsCloud
         $class = "IotSpace\\Ys\\{$name}";
 
         if (class_exists($class)) {
-            return new $class($config);
+            if (empty($config[0])) {
+                throw new IotException("config missed");
+            }
+            return new $class($config[0]);
         }
 
         throw new IotException("{$name} Not Found.");
