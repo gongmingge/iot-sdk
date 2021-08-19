@@ -9,10 +9,9 @@
             "email": "305234089@qq.com"
         }
     ],
-    "minimum-stability": "1.0.0",
     "require": {
         "php":">=7.0",
-        "guzzlehttp/guzzle": "^7.3"
+        "guzzlehttp/guzzle": "^6.2"
     },
     "autoload": {
         "psr-4": {"IotSdk\\": "src"},
