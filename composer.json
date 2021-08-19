@@ -9,6 +9,7 @@
             "email": "305234089@qq.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php":">=7.0",
         "guzzlehttp/guzzle": "^6.2"
