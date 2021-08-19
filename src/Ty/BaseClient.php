@@ -17,21 +17,17 @@ abstract class BaseClient
     const CACHE_TOKEN_KEY = 'TY_ACCESS_TOKEN';
 
     /**
-     * @var Illuminate\Foundation\Application
-     */
-    protected $app;
-    /**
      * @var array
      */
     protected $config;
 
-    /**
-     * 构造函数 自动注入 Laravel app实例
-     * @param \Illuminate\Foundation\Application $app
+    /***
+     * 构造函数
+     * @param array $config
      */
-    public function __construct(\Illuminate\Foundation\Application $app)
+    public function __construct(array $config)
     {
-        $this->config = $app['config']->get('iot.ty');
+        $this->config = $config;
     }
 
     protected function getCacheToken()
@@ -101,16 +97,8 @@ abstract class BaseClient
             $options['body'] = $body;
         }
         $res = ApiRequest::httpRequest($method, $url, $options);
-        DB::table('iot_log')->insert([
-            'platform'=>Platform::TY,
-            'method'=>$method,
-            'url'=>$url,
-            'res_code'=>$res['code']??'',
-            'res_data'=>var_export($res, true),
-            'post_data'=>var_export($options, true),
-            'message'=>$res['msg']??'',
-            'createtime'=>date('Y-m-d H:i:s'),
-        ]);
+
+        //todo 记录日志
         if(!$res['success']){
             throw new IotException($res['msg'], ErrorCode::TY, $res);
         }
