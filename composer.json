@@ -1,0 +1,23 @@
+{
+    "name": "gongmingge/iot-sdk",
+    "description": "物联网智能设备SDK",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "龚遵明",
+            "email": "305234089@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php":">=7.0",
+        "guzzlehttp/guzzle": "^7.3"
+    },
+    "autoload": {
+        "psr-4": {"IotSpace\\": "src"},
+        "files": [
+            "src/Common/Functions.php"
+        ]
+    }
+}
