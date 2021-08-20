@@ -13,7 +13,8 @@
     "require": {
         "php":">=7.0",
         "guzzlehttp/guzzle": "^6.2",
-        "nesbot/carbon": "^2.51"
+        "nesbot/carbon": "^2.51",
+        "pimple/pimple": "^3.0"
     },
     "autoload": {
         "psr-4": {"IotSpace\\": "src"},

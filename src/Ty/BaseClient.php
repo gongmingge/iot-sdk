@@ -4,7 +4,6 @@
 namespace IotSpace\Ty;
 
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
 use IotSpace\Support\ApiRequest;
 use IotSpace\Exception\IotException;
 use IotSpace\Exception\ErrorCode;
